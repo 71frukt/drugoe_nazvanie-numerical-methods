@@ -1,0 +1,6 @@
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/CMakeFiles/task4_FloatingPoint.dir
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/CMakeFiles/edit_cache.dir
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/CMakeFiles/rebuild_cache.dir
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/source/cmd_options/CMakeFiles/cmd_options.dir
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/source/cmd_options/CMakeFiles/edit_cache.dir
+/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/source/cmd_options/CMakeFiles/rebuild_cache.dir

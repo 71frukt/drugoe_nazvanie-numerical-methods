@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/cmd_options/include -g -std=c++20 -Wall -Wextra -Wpedantic -O2 -o CMakeFiles/task4_FloatingPoint.dir/source/main.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/main.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/main.cpp",
+  "output": "CMakeFiles/task4_FloatingPoint.dir/source/main.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/source/cmd_options",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/cmd_options/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/lib -g -std=c++20 -o CMakeFiles/cmd_options.dir/source/cmd_options.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/cmd_options/source/cmd_options.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/source/cmd_options/source/cmd_options.cpp",
+  "output": "source/cmd_options/CMakeFiles/cmd_options.dir/source/cmd_options.cpp.o"
+}
+]

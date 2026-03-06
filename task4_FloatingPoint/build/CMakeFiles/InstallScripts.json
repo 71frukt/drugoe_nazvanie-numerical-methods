@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/task4_FloatingPoint/build/source/cmd_options/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
