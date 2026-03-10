@@ -29,3 +29,24 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     -Wpedantic
     -O2
 )
+
+#================= Additional task =====================================
+add_subdirectory(source/bivariate_normal_generator)
+
+add_executable(additional_task
+    source/additional_task.cpp
+)
+
+target_link_libraries(additional_task PRIVATE
+    RLogSU
+    rnd_bit_generators
+    chi_sq_generator
+    bivariate_normal_generator
+)
+
+target_compile_options(additional_task PRIVATE
+    -Wall
+    -Wextra
+    -Wpedantic
+    -O2
+)
