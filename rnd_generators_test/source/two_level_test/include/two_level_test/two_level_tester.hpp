@@ -1,21 +1,23 @@
 #pragma once
 
+#include <cassert>
 #include <cstddef>
 #include <vector>
 
 #include "first_level_tests/ifirst_level_tester.hpp"
 #include "uniformity_tests/iuniformity_tester.hpp"
+#include "utils/bounds_check.hpp"
 
 namespace rnd_generators_test {
 
 class TwoLevelTester
 {
 public:
-    TwoLevelTester() = default;
-
     TwoLevelTester(const std::vector<double> sequence)
         : sequence_(sequence)
-    {}
+    {
+        assert(utils::BoundsCheckStrict(sequence_, 0, 1));
+    }
 
     [[nodiscard]] double Run(const IFirstLevelTester& first_lvl_tester, const IUniformityTester& u_test, size_t block_count);
 

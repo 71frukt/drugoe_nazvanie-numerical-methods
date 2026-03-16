@@ -1,8 +1,8 @@
 #pragma once
 
 #include "uniformity_tests/iuniformity_tester.hpp"
+#include "utils/bounds_check.hpp"
 
-#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <boost/math/distributions/kolmogorov_smirnov.hpp>
@@ -14,6 +14,8 @@ class KSTester : public IUniformityTester
 public:
     double Run(std::vector<double>& u_values) const override
     {
+        assert(utils::BoundsCheckStrict(u_values, 0, 1));
+
         const size_t n = u_values.size();
         std::sort(u_values.begin(), u_values.end());
 

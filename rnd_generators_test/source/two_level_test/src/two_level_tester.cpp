@@ -1,6 +1,7 @@
 #include "two_level_test/two_level_tester.hpp"
 
 #include "uniformity_tests/iuniformity_tester.hpp"
+#include "utils/bounds_check.hpp"
 
 #include <cstddef>
 #include <iostream>

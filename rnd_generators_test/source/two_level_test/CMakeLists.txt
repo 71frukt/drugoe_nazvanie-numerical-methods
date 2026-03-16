@@ -12,8 +12,12 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 target_include_directories(${PROJECT_NAME} PUBLIC ~/boost_1_84_0)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE 
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    utils
     RLogSU
+)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC 
     first_level_tests
     uniformity_tests
 )

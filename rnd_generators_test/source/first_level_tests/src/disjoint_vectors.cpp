@@ -1,4 +1,5 @@
 #include "first_level_tests/disjoint_vectors.hpp"
+#include "utils/bounds_check.hpp"
 
 #include <vector>
 
@@ -6,6 +7,8 @@ namespace rnd_generators_test {
 
 double DisjointVectorsTester::GetTestStatistics(std::span<const double> block) const
 {
+    assert(utils::BoundsCheckStrict(block, 0, 1));
+
     std::vector<double> observed(baskets_count_, 0.0);
 
     for (double val : block)

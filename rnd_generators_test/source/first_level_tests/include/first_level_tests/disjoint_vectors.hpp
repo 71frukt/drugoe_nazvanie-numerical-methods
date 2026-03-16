@@ -6,7 +6,7 @@
 
 namespace rnd_generators_test {
 
-class DisjointVectorsTester : IFirstLevelTester
+class DisjointVectorsTester : public IFirstLevelTester
 {
 public:
     explicit DisjointVectorsTester(size_t baskets_count)
