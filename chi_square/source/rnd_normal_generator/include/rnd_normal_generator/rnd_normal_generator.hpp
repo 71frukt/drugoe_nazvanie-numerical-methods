@@ -2,6 +2,8 @@
 
 #include <concepts>
 #include <random>
+#include <limits>
+
 namespace rnd_generators {
 
 class NormalGenerator
@@ -38,6 +40,12 @@ public:
 
         return         point_x * phi_radius;
     }
+
+    using result_t = uint32_t;
+
+    static constexpr double min() { return std::numeric_limits<double>::min(); }
+    static constexpr double max() { return std::numeric_limits<double>::max(); }
+
 
 private:
     bool   has_spare_   = false;

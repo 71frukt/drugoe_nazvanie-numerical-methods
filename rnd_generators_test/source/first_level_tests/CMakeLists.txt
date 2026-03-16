@@ -3,6 +3,7 @@ project(first_level_tests LANGUAGES CXX)
 
 add_library(${PROJECT_NAME}
     src/disjoint_vectors.cpp
+    src/fourier_tester.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
