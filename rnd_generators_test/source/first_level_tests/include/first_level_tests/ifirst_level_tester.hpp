@@ -10,7 +10,7 @@
 
 namespace rnd_generators_test {
 
-class FirstLevelTester
+class IFirstLevelTester
 {
 public:
 

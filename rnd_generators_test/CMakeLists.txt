@@ -10,6 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(source/first_level_tests)
 add_subdirectory(source/two_level_test)
+add_subdirectory(source/uniformity_tests)
 add_subdirectory(lib/RLogSU)
 
 add_executable(${PROJECT_NAME}

@@ -1,4 +1,4 @@
-#include "first_level_tests/first_level_tester.hpp"
+#include "first_level_tests/ifirst_level_tester.hpp"
 
 #include <iostream>
 #include <cassert>
@@ -6,7 +6,7 @@
 
 namespace rnd_generators_test {
 
-class DisjointVectorsTester : FirstLevelTester
+class DisjointVectorsTester : IFirstLevelTester
 {
 public:
     explicit DisjointVectorsTester(size_t baskets_count)

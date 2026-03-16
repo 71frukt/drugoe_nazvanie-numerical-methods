@@ -1,5 +1,7 @@
 #include "two_level_test/two_level_tester.hpp"
 
+#include "uniformity_tests/iuniformity_tester.hpp"
+
 #include <cstddef>
 #include <iostream>
 #include <vector>
@@ -7,7 +9,7 @@
 
 namespace rnd_generators_test {
 
-double TwoLevelTester::Run(const FirstLevelTester& first_lvl_tester, size_t block_count)
+double TwoLevelTester::Run(const IFirstLevelTester& first_lvl_tester, const IUniformityTester& u_tester, size_t block_count)
 {
     std::vector<double> test_statistics;
 
@@ -23,7 +25,7 @@ double TwoLevelTester::Run(const FirstLevelTester& first_lvl_tester, size_t bloc
         cdf_values.push_back(cdf_i);
     }
 
-    
+    return u_tester.Run(cdf_values);
 }
 
 

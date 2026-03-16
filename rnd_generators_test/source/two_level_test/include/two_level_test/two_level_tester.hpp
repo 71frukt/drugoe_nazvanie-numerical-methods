@@ -1,8 +1,10 @@
 #pragma once
 
-#include "first_level_tests/first_level_tester.hpp"
 #include <cstddef>
 #include <vector>
+
+#include "first_level_tests/ifirst_level_tester.hpp"
+#include "uniformity_tests/iuniformity_tester.hpp"
 
 namespace rnd_generators_test {
 
@@ -15,7 +17,7 @@ public:
         : sequence_(sequence)
     {}
 
-    [[nodiscard]] double Run(const FirstLevelTester& first_lvl_tester, size_t block_count);
+    [[nodiscard]] double Run(const IFirstLevelTester& first_lvl_tester, const IUniformityTester& u_test, size_t block_count);
 
 private:
 
