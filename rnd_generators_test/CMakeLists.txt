@@ -14,6 +14,8 @@ add_subdirectory(source/uniformity_tests)
 add_subdirectory(source/utils)
 add_subdirectory(lib/RLogSU)
 
+add_subdirectory(../chi_square/source/rnd_bit_generators chi_square_build)
+
 add_executable(${PROJECT_NAME}
     source/main.cpp
 )
@@ -22,6 +24,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     RLogSU
     first_level_tests
     two_level_test
+    rnd_bit_generators
 )
 
 target_compile_options(${PROJECT_NAME} PRIVATE
