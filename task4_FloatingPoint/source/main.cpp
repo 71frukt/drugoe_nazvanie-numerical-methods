@@ -44,6 +44,8 @@ void TestVariance(std::ostream& output, size_t gen_num, std::mt19937& generator)
 
 int main(const int argc, const char* argv[])
 {
+    std::cout << sizeof(float) << " "  << sizeof(double) << " "  << sizeof(long double) << " \n";
+
     AppSettings settings = {};
     if (settings.parce(argc, argv) == false)
         return 0;
