@@ -1,0 +1,3 @@
+[submodule "task7_LogImpl/lib/RLogSU"]
+	path = task7_LogImpl/lib/RLogSU
+	url = https://github.com/71frukt/RLogSU.git
