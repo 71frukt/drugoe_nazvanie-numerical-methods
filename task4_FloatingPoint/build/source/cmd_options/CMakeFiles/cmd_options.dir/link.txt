@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcmd_options.a CMakeFiles/cmd_options.dir/source/cmd_options.cpp.o
+/usr/bin/ranlib libcmd_options.a

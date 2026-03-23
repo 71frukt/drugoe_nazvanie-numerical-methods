@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/task4_FloatingPoint.dir/source/main.cpp.o -o task4_FloatingPoint  source/cmd_options/libcmd_options.a -lRLogSU
