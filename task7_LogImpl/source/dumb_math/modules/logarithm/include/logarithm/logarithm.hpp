@@ -1,0 +1,15 @@
+#pragma once
+
+#include <iostream>
+#include <concepts>
+
+namespace dumb_math {
+
+template <std::floating_point T>
+T ln(T x)
+{
+    std::cout << x;
+    return x;
+}
+
+} // namespace dumb_math
