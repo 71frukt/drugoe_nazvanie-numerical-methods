@@ -3,7 +3,7 @@
 #include "RLogSU/logger.hpp"
 #include <string>
 
-namespace lookup_table_builder {
+namespace dumb_math::logarithm::detail::lookup_table {
 
 bool AppSettings::parce(const int argc, const char *argv[])
 {
@@ -51,4 +51,4 @@ bool AppSettings::parce(const int argc, const char *argv[])
     return true;
 }
 
-} // namespace lookup_table_builder
+} // namespace dumb_math::logarithm::detail::lookup_table

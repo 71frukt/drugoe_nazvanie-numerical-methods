@@ -1,0 +1,52 @@
+#include <cmath>
+#include <vector>
+#include <limits>
+#include <iomanip>
+
+#include "lookup_table_builder/lookup_table_builder.hpp"
+
+namespace dumb_math::logarithm {
+namespace detail::lookup_table {
+
+void PrintTable(const std::vector<TableItem>& table, std::ostream& ostream)
+{
+
+    #define STR_HELPER_(x) #x
+    #define STR_(x) STR_HELPER_(x)
+
+    ostream << "// generated file"                                              << std::endl
+            << "// do not change it manually"                                   << std::endl
+            <<                                                                     std::endl
+            << "#pragma once"                                                   << std::endl
+            <<                                                                     std::endl            
+            << "#include \"lookup_table_builder/lookup_table_builder.hpp\""     << std::endl
+            <<                                                                     std::endl            
+            << "#include <array>"                                               << std::endl
+            <<                                                                     std::endl            
+            << "namespace dumb_math::logarithm {"                               << std::endl
+            << "namespace detail::lookup_table {"                               << std::endl
+            <<                                                                     std::endl
+            << "constexpr std::array<TableItem, " << table.size() << "> "
+            << STR_(LN_LOOKUP_TABLE) << " = {{"                                 << std::endl;
+
+    #undef STR_HELPER_
+    #undef STR_
+
+    ostream << std::fixed << std::setprecision(std::numeric_limits<long double>::digits10);
+
+    for (const TableItem& item : table)
+    {
+        ostream << "    {.one_div_x = " << item.one_div_x << ", \t"
+                        ".ln_x = "      << item.ln_x      << "},"               << std::endl;
+    }
+
+    ostream << "}};"                                                            << std::endl
+            <<                                                                     std::endl
+            << ""
+            << "} //namespace dumb_math::logarithm"                             << std::endl
+            << "} //namespace detail::lookup_table"                             << std::endl;
+}
+
+
+} // namespace detail::lookup_table    
+} // namespace dumb_math::logarithm

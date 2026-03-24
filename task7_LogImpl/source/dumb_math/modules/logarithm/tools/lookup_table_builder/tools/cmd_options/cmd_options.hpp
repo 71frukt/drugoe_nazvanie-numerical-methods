@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string_view>
 
-namespace lookup_table_builder {
+namespace dumb_math::logarithm::detail::lookup_table {
 
 struct AppSettings
 {
@@ -17,7 +17,7 @@ public:
 private:
     std::unique_ptr<std::ofstream> file_output_storage_;
     
-    static constexpr std::string_view DefaultOutputFileName_ = "generated/lookup_table.hpp";
+    static constexpr std::string_view DefaultOutputFileName_ = "source/dumb_math/modules/logarithm/generated/lookup_table.hpp";
 };
 
-} // namespace lookup_table_builder
+} // namespace dumb_math::logarithm::detail::lookup_table
