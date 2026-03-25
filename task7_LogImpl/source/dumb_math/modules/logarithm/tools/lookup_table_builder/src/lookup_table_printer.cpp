@@ -3,13 +3,16 @@
 #include <limits>
 #include <iomanip>
 
+#include "RLogSU/logger.hpp"
+
 #include "lookup_table_builder/lookup_table_builder.hpp"
 
 namespace dumb_math::logarithm {
 namespace detail::lookup_table {
 
-void PrintTable(const std::vector<TableItem>& table, std::ostream& ostream)
+void PrintTable(const std::vector<TableItem>& table, const size_t table_size_exp, std::ostream& ostream)
 {
+    RLSU_ASSERT(table.size() == (size_t(1) << table_size_exp), "invalid table size={} or table_size_exp={}", table.size(), table_size_exp);
 
     #define STR_HELPER_(x) #x
     #define STR_(x) STR_HELPER_(x)
@@ -19,12 +22,15 @@ void PrintTable(const std::vector<TableItem>& table, std::ostream& ostream)
             <<                                                                     std::endl
             << "#pragma once"                                                   << std::endl
             <<                                                                     std::endl            
-            << "#include \"lookup_table_builder/lookup_table_builder.hpp\""     << std::endl
+            << "#include \"logarithm/lookup_table_item.hpp\""                   << std::endl
             <<                                                                     std::endl            
             << "#include <array>"                                               << std::endl
+            << "#include <cstddef>"                                             << std::endl            
             <<                                                                     std::endl            
             << "namespace dumb_math::logarithm {"                               << std::endl
             << "namespace detail::lookup_table {"                               << std::endl
+            <<                                                                     std::endl
+            << "constexpr size_t TableSizeExp = " << table_size_exp << ";"      << std::endl
             <<                                                                     std::endl
             << "constexpr std::array<TableItem, " << table.size() << "> "
             << STR_(LN_LOOKUP_TABLE) << " = {{"                                 << std::endl;

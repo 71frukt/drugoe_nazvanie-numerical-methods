@@ -3,12 +3,15 @@
 
 #pragma once
 
-#include "lookup_table_builder/lookup_table_builder.hpp"
+#include "logarithm/lookup_table_item.hpp"
 
 #include <array>
+#include <cstddef>
 
 namespace dumb_math::logarithm {
 namespace detail::lookup_table {
+
+constexpr size_t TableSizeExp = 8;
 
 constexpr std::array<TableItem, 256> LookupTable = {{
     {.one_div_x = 0.998050682261208577, 	.ln_x = 0.001951220131261749},

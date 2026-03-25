@@ -14,7 +14,7 @@ int main(const int argc, const char* argv[]) try
     settings.parce(argc, argv);
 
     std::vector<TableItem> generated_table = BuildTable(settings.table_size_exp);
-    PrintTable(generated_table, *settings.ostream);
+    PrintTable(generated_table, settings.table_size_exp, *settings.ostream);
 
     return 0;
 }

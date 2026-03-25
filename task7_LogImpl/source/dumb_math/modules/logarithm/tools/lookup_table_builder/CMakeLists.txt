@@ -10,13 +10,18 @@ add_executable(${PROJECT_NAME}
 )
 
 target_include_directories(${PROJECT_NAME}
-    PRIVATE
+    PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    
+    PRIVATE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tools>
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/lib>
+
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../include>
 )
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
         RLogSU
+        dumb_math_common
 )

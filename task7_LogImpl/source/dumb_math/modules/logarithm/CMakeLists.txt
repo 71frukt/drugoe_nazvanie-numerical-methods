@@ -21,8 +21,10 @@ add_library(${PROJECT_NAME} INTERFACE
 
 add_dependencies(${PROJECT_NAME} generate_logarithm_lut)
 
-target_link_libraries(${PROJECT_NAME} INTERFACE
-    RLogSU
+target_link_libraries(${PROJECT_NAME}
+    INTERFACE
+        RLogSU
+        dumb_math_common
 )
 
 target_include_directories(${PROJECT_NAME}

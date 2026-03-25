@@ -12,3 +12,9 @@ target_include_directories(dumb_math INTERFACE
 target_link_libraries(${PROJECT_NAME} INTERFACE
     logarithm    
 )
+
+add_library(dumb_math_common INTERFACE)
+
+target_include_directories(dumb_math_common INTERFACE 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/common>
+)
