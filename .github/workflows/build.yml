@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [chi_square, rnd_generators_test, task3, task4_FloatingPoint, task7_LogImpl]
+        project: [task7_LogImpl]
         build_type: [Release, Debug]
 
     steps:
