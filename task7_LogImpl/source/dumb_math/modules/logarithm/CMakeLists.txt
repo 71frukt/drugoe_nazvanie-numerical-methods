@@ -32,3 +32,10 @@ target_include_directories(${PROJECT_NAME}
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/generated> 
 )
+
+#================= Tests =============================================
+option(LN_BUILD_TESTING "Build ln tests" ON)
+
+if(LN_BUILD_TESTING)
+    add_subdirectory(tests)
+endif()

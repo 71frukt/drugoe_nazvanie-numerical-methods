@@ -10,6 +10,7 @@ int main()
 {
     std::cout << std::fixed << std::setprecision(std::numeric_limits<long double>::digits10);
 
+    std::cout << dumb_math::logarithm::ln<long double>((long double) 0.0) << std::endl;
     std::cout << dumb_math::logarithm::ln<long double>((long double) 1.0) << std::endl;
     std::cout << dumb_math::logarithm::ln<long double>((long double) 2.0) << std::endl;
     std::cout << dumb_math::logarithm::ln<long double>((long double) 3.0) << std::endl;

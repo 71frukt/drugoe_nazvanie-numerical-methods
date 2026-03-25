@@ -1,0 +1,42 @@
+name: CI task7_LogImpl
+
+on:
+  push:
+    paths:
+      - 'task7_LogImpl/**'
+      - '.github/workflows/task7_LogImpl_ci.yml'
+  pull_request:
+    paths:
+      - 'task7_LogImpl/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release, Debug]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libfmt-dev graphviz cmake
+
+    - name: Configure CMake
+      run: cmake -S task7_LogImpl -B task7_LogImpl/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+
+    - name: Build project
+      run: cmake --build task7_LogImpl/build --config ${{ matrix.build_type }} -j $(nproc)
+
+    # - name: Run tests
+    #   run: ctest --test-dir task7_LogImpl/build --output-on-failure -V -C ${{ matrix.build_type }}
