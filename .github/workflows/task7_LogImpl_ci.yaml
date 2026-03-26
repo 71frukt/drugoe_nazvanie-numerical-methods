@@ -33,7 +33,10 @@ jobs:
         sudo apt-get install -y build-essential libfmt-dev libmpfr-dev libgmp-dev graphviz
 
     - name: Configure CMake
-      run: cmake -S task7_LogImpl -B task7_LogImpl/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      run: |
+        cmake -S task7_LogImpl -B task7_LogImpl/build \
+              -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+              -DCMAKE_SYSTEM_PREFIX_PATH="/usr;/usr/local"
 
     - name: Build project
       run: cmake --build task7_LogImpl/build --config ${{ matrix.build_type }} -j $(nproc)
