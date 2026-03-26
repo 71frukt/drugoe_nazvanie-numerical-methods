@@ -30,7 +30,7 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential libfmt-dev libmpfr-dev libgmp-dev graphviz cmake
+        sudo apt-get install -y build-essential libfmt-dev libmpfr-dev libgmp-dev graphviz
 
     - name: Configure CMake
       run: cmake -S task7_LogImpl -B task7_LogImpl/build -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
