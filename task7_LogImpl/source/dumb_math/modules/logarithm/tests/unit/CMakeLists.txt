@@ -5,20 +5,16 @@ enable_testing()
 
 include(FetchContent)
 
+set(FETCHCONTENT_QUIET OFF)
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/refs/heads/main.zip
+  DOWNLOAD_EXTRACT_TIMESTAMP TRUE 
 )
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
-
-target_link_libraries(logarithm_unittests
-    PRIVATE
-        GTest::gtest_main
-        tests_common
-)
 
 find_library(GMP_LIB  gmp  REQUIRED)
 find_library(MPFR_LIB mpfr REQUIRED)
@@ -41,7 +37,6 @@ target_link_libraries(${PROJECT_NAME}
         ${MPFR_LIB}
 
         GTest::gtest_main
-        GTest::gtest
 )
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
