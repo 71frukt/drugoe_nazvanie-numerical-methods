@@ -10,6 +10,8 @@ namespace detail    {
 template <std::floating_point TestT>
 [[nodiscard]] TestT CalcUlpError(const TestT testing, const mpfr::mpreal& standard_mpfr) 
 {
+    mpfr::mpreal::set_default_prec(256);
+
     if (std::isnan(testing) || mpfr::isnan(standard_mpfr)) 
     {
         return std::numeric_limits<TestT>::infinity();
