@@ -3,7 +3,22 @@ project(logarithm_unittests LANGUAGES CXX)
 
 enable_testing() 
 
-find_package(GTest REQUIRED)
+include(FetchContent)
+
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/heads/main.zip
+)
+
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
+
+target_link_libraries(logarithm_unittests
+    PRIVATE
+        GTest::gtest_main
+        tests_common
+)
 
 find_library(GMP_LIB  gmp  REQUIRED)
 find_library(MPFR_LIB mpfr REQUIRED)
