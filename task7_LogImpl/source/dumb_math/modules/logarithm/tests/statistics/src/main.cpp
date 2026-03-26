@@ -1,42 +1,45 @@
+#include <cstdlib>
 #include <fstream>
 #include <stdexcept>
 #include <string>
-#include <string_view>
 
 #include "stat_generator.hpp"
 #include "RLogSU/logger.hpp"
+#include "statistics/generated/config.hpp"
 
-const std::string OFolderName = CURRENT_SRC_DIR "/data/";
+const std::string ODataFolderName  = CURRENT_SRC_DIR "/data/";
+const std::string OPlotsFolderName = CURRENT_SRC_DIR "/plots/";
 
 namespace {
-    template <typename T>
-    void MakeStat(const std::string& type_name, const std::string& ofolder)
-    {
-        std::string stat_1toInf_name = ofolder + "stat_1toInf_" + type_name + ".txt";
-        std::string stat_near1_name  = ofolder + "stat_near1_"  + type_name + ".txt";
+    
+    using namespace dumb_math::logarithm::tests::statistics;
 
-        std::ofstream stat_1toInf(stat_1toInf_name);
-        std::ofstream stat_near1 (stat_near1_name);
+    template <typename T>
+    void MakeStat(const std::string_view base_name_1toInf, const std::string_view base_name_near1)
+    {
+        std::string path_1toInf = std::string(config::DATA_DIR) + "/" + std::string(base_name_1toInf) + ".txt";
+        std::string path_near1  = std::string(config::DATA_DIR) + "/" + std::string(base_name_near1)  + ".txt";
+
+        std::ofstream stat_1toInf(path_1toInf);
+        std::ofstream stat_near1 (path_near1);
 
         if (!stat_1toInf.is_open())
-            RLSU_THROW<std::runtime_error>(RLSU_FORMAT("file '{}' is not open!", stat_1toInf_name));
+            RLSU_THROW<std::runtime_error>(RLSU_FORMAT("file '{}' is not open!", path_1toInf));
 
         if (!stat_near1.is_open())
-            RLSU_THROW<std::runtime_error>(RLSU_FORMAT("file '{}' is not open!", stat_near1_name));
+            RLSU_THROW<std::runtime_error>(RLSU_FORMAT("file '{}' is not open!", path_near1));
 
-        std::cout << "cur file = " << ofolder + "stat_1toInf_" + type_name + ".txt" << std::endl;
-        
-        dumb_math::logarithm::tests::GenerateLnErrorUlpData_1toInf<T>(stat_1toInf);
-        dumb_math::logarithm::tests::GenerateLnErrorUlpData_near1 <T>(stat_near1 );
+        GenerateLnErrorUlpData_1toInf<T>(stat_1toInf);
+        GenerateLnErrorUlpData_near1 <T>(stat_near1 );
     }
 }
 
 
 int main(const int argc, const char* argv[]) try
 {
-    ::MakeStat<float>      ("float",       OFolderName);
-    ::MakeStat<double>     ("double",      OFolderName);
-    ::MakeStat<long double>("long_double", OFolderName);
+    ::MakeStat<float>       (config::FILE_1TOINF_FLOAT,   config::FILE_NEAR1_FLOAT );
+    ::MakeStat<double>      (config::FILE_1TOINF_DOUBLE,  config::FILE_NEAR1_DOUBLE);
+    ::MakeStat<long double> (config::FILE_1TOINF_LDOUBLE, config::FILE_NEAR1_LDOUBLE);
 }
 
 catch (std::runtime_error e)

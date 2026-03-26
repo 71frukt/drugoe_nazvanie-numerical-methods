@@ -11,12 +11,11 @@
 
 namespace dumb_math        {
 namespace logarithm::tests {
+namespace statistics       {
 
 template <std::floating_point T>
 void GenerateLnErrorUlpData_1toInf(std::ostream& ostream) 
 {
-    ostream << std::setprecision(std::numeric_limits<T>::digits10);
-
     constexpr int min_exp = std::numeric_limits<T>::min_exponent;
     constexpr int max_exp = std::numeric_limits<T>::max_exponent;
 
@@ -37,7 +36,7 @@ void GenerateLnErrorUlpData_1toInf(std::ostream& ostream)
 
             ostream << std::left << std::setw(30) 
                     << std::defaultfloat << std::setprecision(std::numeric_limits<T>::max_digits10) << x 
-                    << std::fixed << std::setprecision(1) << ulp 
+                    << std::fixed        << std::setprecision(std::numeric_limits<T>::max_digits10) << ulp 
                     << "\n";
         }
     }
@@ -60,7 +59,7 @@ void GenerateLnErrorUlpData_near1(std::ostream& ostream)
         {
             ostream << std::left << std::setw(30) 
                     << std::defaultfloat << std::setprecision(std::numeric_limits<T>::max_digits10) << x_right 
-                    << std::fixed << std::setprecision(1) << CalcLnUlpErr(x_right) 
+                    << std::fixed        << std::setprecision(std::numeric_limits<T>::max_digits10) << CalcLnUlpErr(x_right) 
                     << "\n";
         }
     }
@@ -74,11 +73,12 @@ void GenerateLnErrorUlpData_near1(std::ostream& ostream)
         {
             ostream << std::left << std::setw(30) 
                     << std::defaultfloat << std::setprecision(std::numeric_limits<T>::max_digits10) << x_left 
-                    << std::fixed << std::setprecision(1) << CalcLnUlpErr(x_left) 
+                    << std::fixed        << std::setprecision(std::numeric_limits<T>::max_digits10) << CalcLnUlpErr(x_left) 
                     << "\n";
         }
     }
 }
 
+} // namespace statistics
 } // namespace logarithm::tests
 } // namespace dumb_math
