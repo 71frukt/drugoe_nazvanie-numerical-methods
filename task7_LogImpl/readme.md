@@ -30,5 +30,5 @@ sudo apt install libmpfr-dev libgmp-dev
 * $\texttt{Gnuplot}$
 ```zsh
 sudo apt install gnuplot
-```
+``` 
 
