@@ -24,4 +24,4 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE
         RLogSU
         dumb_math_common
-)
+ )

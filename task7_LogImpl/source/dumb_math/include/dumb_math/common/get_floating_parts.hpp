@@ -16,18 +16,16 @@ uint64_t GetMantissa(T x)
     if constexpr (sizeof(T) == 4 && digits == 24) 
     {
         uint32_t bits = std::bit_cast<uint32_t>(x);
-        constexpr int frac_bits = 23;
 
-        return bits & ((1U << frac_bits) - 1);
+        return bits & ((1U << (digits - 1)) - 1);
     }
 
     // double
     else if constexpr (sizeof(T) == 8 && digits == 53) 
     {
-        uint64_t bits = std::bit_cast<uint64_t>(x);
-        constexpr int frac_bits = 52;
-        
-        return bits & ((1ULL << frac_bits) - 1);
+        uint64_t bits = std::bit_cast<uint64_t>(x);   
+
+        return bits & ((1ULL << (digits - 1)) - 1);
     }
 
     // long double
@@ -132,7 +130,8 @@ int32_t GetExponent(T x)
         uint32_t raw_exp = (bits >> 23) & 0xFF; 
         
         return static_cast<int32_t>(raw_exp) - 127;
-    } 
+    }
+
     else if constexpr (sizeof(T) == 8 && digits == 53) 
     {
         // double: 1 бит знака | 11 бит экспоненты | 52 бита мантиссы
@@ -140,7 +139,8 @@ int32_t GetExponent(T x)
         uint32_t raw_exp = (bits >> 52) & 0x7FF; 
         
         return static_cast<int32_t>(raw_exp) - 1023;
-    } 
+    }
+
     else if constexpr (digits == 64) 
     {
         // Байты 0-7: мантисса (64 бита)
@@ -153,7 +153,8 @@ int32_t GetExponent(T x)
         uint32_t raw_exp = exp_sign & 0x7FFF; 
         
         return static_cast<int32_t>(raw_exp) - 16383;
-    } 
+    }
+    
     else 
     {
         static_assert(digits == -1, "Unsupported floating-point format");

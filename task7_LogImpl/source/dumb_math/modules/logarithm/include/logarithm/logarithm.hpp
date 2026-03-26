@@ -2,30 +2,59 @@
 
 #include <cstddef>
 #include <cstdint>
-#include <iostream>
 #include <concepts>
-#include <stdexcept>
+#include <limits>
+#include <cfenv>
+#include <cerrno>
 
-#include "RLogSU/logger.hpp"
 #include "lookup_table.hpp"
 #include "logarithm/tailor.hpp"
+#include "logarithm/common/approx.hpp"
 
 
 namespace dumb_math::logarithm {
 
-template <std::floating_point T, size_t TailorDeg = 4>
+template <std::floating_point T, size_t TailorDeg = sizeof(T)>
 T ln(T x)
 {
-    if (x <= 0)
-        RLSU_THROW<std::runtime_error>(RLSU_FORMAT("x={} is out of range", x));
+    if (x < T(0.0))
+    {
+        errno = EDOM;
+        std::feraiseexcept(FE_INVALID);
 
-    constexpr static long double ln2 = 0.693147180559945309417;
+        return std::numeric_limits<T>::quiet_NaN();
+    }
+
+    if (x == 0)
+    {
+        errno = ERANGE;
+        std::feraiseexcept(FE_DIVBYZERO);
+
+        return -std::numeric_limits<T>::infinity();
+    }
+
+    if (x == std::numeric_limits<T>::infinity()) 
+    {
+        return x; // ln(+inf) = +inf. Флаги не выставляются.
+    }
+
+    if (x != x) // is nan
+    {
+        return x; // Передаем NaN дальше без генерации новых исключений
+    }
+
+    if (x >= T(0.85) && x <= T(1.15))
+    {
+        return common::LnArtgTailor_0to2<TailorDeg>(x);
+    }
+
+    constexpr static long double ln2 = 0.693147180559945309417232121458176568L;
 
     using namespace logarithm::detail::lookup_table;    
 
-    const uint32_t table_index = GetTableIndex<TableSizeExp>(x);
     const auto     mantissa    = common::GetNormalizedMantissa(x);
-    const uint64_t exponenta   = common::GetExponent(x);
+    const auto     exponenta   = common::GetExponent(x);
+    const uint32_t table_index = GetTableIndex<TableSizeExp>(mantissa);
 
     T v = LookupTable[table_index].one_div_x * T(mantissa);
 

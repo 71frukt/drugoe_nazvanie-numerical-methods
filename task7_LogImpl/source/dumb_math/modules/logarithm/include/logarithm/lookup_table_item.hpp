@@ -4,7 +4,8 @@
 #include <bit>
 #include <concepts>
 
-#include "get_floating_parts.hpp"
+#include "RLogSU/logger.hpp"
+#include "dumb_math/common/get_floating_parts.hpp"
 
 namespace dumb_math::logarithm {
 namespace detail::lookup_table {
@@ -17,11 +18,12 @@ struct TableItem
 
 
 template <size_t TableSizeExp, std::floating_point T>
-uint32_t GetTableIndex(T x) 
+uint32_t GetTableIndex(T normd_1to2_mantissa) 
 {
     static_assert(TableSizeExp > 0 && TableSizeExp <= 32, "TableSizeExp is out of bounds");
+    RLSU_ASSERT(normd_1to2_mantissa >= 1 && normd_1to2_mantissa <= 2, "normd_1to2_mantissa={} out of bounds", normd_1to2_mantissa);
 
-    const auto mantissa = common::GetMantissa(x);
+    const auto mantissa = common::GetMantissa(normd_1to2_mantissa);
     constexpr int frac_bits = std::numeric_limits<T>::digits - 1;
 
     static_assert(TableSizeExp <= static_cast<size_t>(frac_bits), 

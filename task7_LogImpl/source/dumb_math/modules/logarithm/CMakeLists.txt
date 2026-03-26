@@ -14,6 +14,14 @@ add_custom_command(
     COMMENT "Generating lookup table for logarithm..."
 )
 add_custom_target(generate_logarithm_lut DEPENDS "${GENERATED_LUT}")
+#====================================================================
+
+#================== public ==========================================
+add_library(logarithm_common INTERFACE)
+target_include_directories(logarithm_common INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+)
+#====================================================================
 
 add_library(${PROJECT_NAME} INTERFACE 
     include/logarithm/logarithm.hpp

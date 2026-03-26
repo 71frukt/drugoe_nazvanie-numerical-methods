@@ -1,23 +1,29 @@
 #include <iostream>
-#include "RLogSU/logger.hpp"
-#include "logarithm/logarithm.hpp"
-#include "logarithm/tailor.hpp"
 #include <iomanip>
+#include <limits>
 
-#include <dumb_math>
+#include "dumb_math.hpp"
+
+// #include "dumb_math/lib/mpreal.h"
+// #include "dumb_math/detail/calc_ulp_error.hpp"
 
 int main()
 {
-    std::cout << std::fixed << std::setprecision(std::numeric_limits<long double>::digits10);
+    // std::cout << dumb_math::logarithm::ln<long double>((long double) 0.0) << std::endl;
 
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 0.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 1.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 2.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 3.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 4.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 5.0) << std::endl;
-    std::cout << dumb_math::logarithm::ln<long double>((long double) 6.0) << std::endl;
+    long double ln = dumb_math::logarithm::ln<long double>(0.5);
 
+    // using mpfr::mpreal;
+    // mpreal::set_default_prec(256);
+
+    // mpreal x_str = "1.1";
+    // mpreal result_str = mpfr::log(x_str);
+
+    // std::cout << std::setprecision(50);
+    // std::cout << "ln(1.1) etalon = " << result_str << std::endl;
+    std::cout << "ln(0.5) test   = " << ln         << std::endl;
+
+    // std::cout << "ulps = " << dumb_math::common::CalcUlpError(ln, result_str) << std::endl;
 
     return 0;
 }

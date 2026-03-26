@@ -65,3 +65,20 @@ target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/lib
 )
+
+
+
+#========== temp =====================
+find_library(GMP_LIB  gmp  REQUIRED)
+find_library(MPFR_LIB mpfr REQUIRED)
+
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        ${GMP_LIB}
+        ${MPFR_LIB}
+)
+
+target_include_directories(${PROJECT_NAME}
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/source/dumb_math/modules/logarithm/tests/lib/
+)
