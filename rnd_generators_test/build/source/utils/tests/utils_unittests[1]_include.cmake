@@ -1,0 +1,5 @@
+if(EXISTS "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/utils/tests/utils_unittests[1]_tests.cmake")
+  include("/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/utils/tests/utils_unittests[1]_tests.cmake")
+else()
+  add_test(utils_unittests_NOT_BUILT utils_unittests_NOT_BUILT)
+endif()

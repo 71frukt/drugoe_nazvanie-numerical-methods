@@ -15,9 +15,7 @@ class TwoLevelTester
 public:
     TwoLevelTester(const std::vector<double> sequence)
         : sequence_(sequence)
-    {
-        assert(utils::BoundsCheckStrict(sequence_, 0, 1));
-    }
+    {}
 
     [[nodiscard]] double Run(const IFirstLevelTester& first_lvl_tester, const IUniformityTester& u_test, size_t block_count);
 

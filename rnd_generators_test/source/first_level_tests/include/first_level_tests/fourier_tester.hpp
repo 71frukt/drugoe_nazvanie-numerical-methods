@@ -1,8 +1,5 @@
 #include "first_level_tests/ifirst_level_tester.hpp"
-#include <vector>
-#include <complex>
 #include <cmath>
-#include <numeric>
 #include <boost/math/distributions/normal.hpp>
 
 namespace rnd_generators_test {
@@ -23,8 +20,6 @@ public:
 
 private:
     size_t block_size_2_deg_;
-
-    void PerformFFT_(std::vector<std::complex<double>>& a) const;
 };
 
 } // namespace rnd_generators_test

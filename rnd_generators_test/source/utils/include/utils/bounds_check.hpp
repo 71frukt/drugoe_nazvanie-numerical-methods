@@ -3,7 +3,7 @@
 #include <compare>
 #include <vector>
 
-namespace utils {
+namespace rnd_generators_test::utils {
 
 template <std::ranges::input_range Range>
 bool BoundsCheckStrict(const Range& data, 
@@ -20,4 +20,4 @@ requires std::three_way_comparable<std::ranges::range_value_t<Range>>
     return true;
 }
 
-} // namespace utils
+} // namespace rnd_generators_test::utils
