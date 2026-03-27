@@ -17,23 +17,35 @@ $$Y = \mu_y + \sigma_y (\rho Z_1 + \sqrt{1 - \rho^2} Z_2)$$
 * $E[Z_1^2] = 1$
 
 **1. Проверка параметров величины X**
+
 $$E[X] = E[\mu_x + \sigma_x Z_1] = \mu_x + \sigma_x E[Z_1] = \mu_x$$
+
 $$Var(X) = Var(\mu_x + \sigma_x Z_1) = \sigma_x^2 Var(Z_1) = \sigma_x^2$$
 
 **2. Проверка параметров величины Y**
+
 $$E[Y] = E[\mu_y + \sigma_y (\rho Z_1 + \sqrt{1 - \rho^2} Z_2)] = \mu_y + 0 + 0 = \mu_y$$
+
 Воспользуемся свойством дисперсии суммы независимых величин $Var(aA + bB) = a^2 Var(A) + b^2 Var(B)$:
+
 $$Var(Y) = \sigma_y^2 (\rho^2 Var(Z_1) + (\sqrt{1 - \rho^2})^2 Var(Z_2)) = \sigma_y^2 (\rho^2 + 1 - \rho^2) = \sigma_y^2$$
 
-**3. Проверка коэффициента корреляции**
-Коэффициент корреляции Пирсона: $Corr(X, Y) = \frac{Cov(X, Y)}{\sigma_x \sigma_y}$.
+**3. Проверка коэффициента корреляции**  
+Коэффициент корреляции Пирсона: $Corr(X, Y) = \frac{Cov(X, Y)}{\sigma_x \sigma_y}$.  
 Найдем ковариацию $Cov(X, Y) = E[(X - E[X])(Y - E[Y])]$:
+
 $$X - E[X] = \sigma_x Z_1$$
+
 $$Y - E[Y] = \sigma_y (\rho Z_1 + \sqrt{1 - \rho^2} Z_2)$$
+
 $$Cov(X, Y) = E[\sigma_x Z_1 \cdot \sigma_y (\rho Z_1 + \sqrt{1 - \rho^2} Z_2)] = \sigma_x \sigma_y (\rho E[Z_1^2] + \sqrt{1 - \rho^2} E[Z_1 Z_2])$$
+
 Так как $E[Z_1 Z_2] = 0$ и $E[Z_1^2] = 1$:
+
 $$Cov(X, Y) = \rho \sigma_x \sigma_y$$
+
 Следовательно:
+
 $$Corr(X, Y) = \frac{\rho \sigma_x \sigma_y}{\sigma_x \sigma_y} = \rho$$
 
 **Вывод:** Математическое ожидание, дисперсия и коэффициент корреляции сконструированных величин соответствуют заданным параметрам, то есть справедливость схемы генерации доказана.
