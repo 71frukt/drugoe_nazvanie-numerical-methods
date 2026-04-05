@@ -6,6 +6,3 @@
 	path = rnd_generators_test/lib/RLogSU
 	url = https://github.com/71frukt/RLogSU.git
 
-[submodule "task7_rlog"]
-	path = task7_LogImpl/lib/RLogSU
-	url = https://github.com/71frukt/RLogSU.git
