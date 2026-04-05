@@ -1,5 +1,5 @@
+#include <stdio.h>
 #include "clogf.h"
-#include <cstdio>
 
 int main()
 {

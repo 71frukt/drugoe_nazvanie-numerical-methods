@@ -1,7 +1,7 @@
-#include "dumb_math.hpp"
+#include "clogf.h"
 #include "logarithm/logarithm.hpp"
 
-inline float logf(float x)
+extern "C" float logf(float x)
 {
     return dumb_math::logarithm::ln<float>(x);
 }

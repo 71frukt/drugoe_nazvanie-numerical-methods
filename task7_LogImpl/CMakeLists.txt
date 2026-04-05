@@ -62,9 +62,13 @@ endif()
 
 # add_subdirectory(tools/cmd_options)
 add_subdirectory(source/dumb_math)
+add_subdirectory(source/clogf)
+
 add_library(cxxopts INTERFACE)
 
 add_executable(${PROJECT_NAME} source/main.cpp)
+
+
 
 ###===========================================LIB_LINK==============================================
 
@@ -77,7 +81,8 @@ endif()
 target_link_libraries(${PROJECT_NAME} PRIVATE
     RLogSU
     # cmd_options
-    dumb_math
+    # dumb_math
+    clogf
 )
 
 target_include_directories(${PROJECT_NAME}
