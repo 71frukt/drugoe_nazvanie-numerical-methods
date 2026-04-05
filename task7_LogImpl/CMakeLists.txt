@@ -36,10 +36,29 @@ if(SANITIZE AND NOT MSVC)
     )
 endif()
 
+###===========================================DEPENDENCIES==========================================
+
+find_package(RLogSU QUIET)
+
+if(NOT RLogSU_FOUND)
+    message(STATUS "RLogSU was not found in the system. We use a local copy in lib/RLogSU (or download it if it is not available)...")
+    
+    include(FetchContent)
+    FetchContent_Declare(
+        RLogSU
+        GIT_REPOSITORY https://github.com/71frukt/RLogSU.git
+        GIT_TAG        main
+        SOURCE_DIR     ${CMAKE_CURRENT_SOURCE_DIR}/lib/RLogSU
+    )
+
+    # add_subdirectory тут автоматически
+    FetchContent_MakeAvailable(RLogSU)
+else()
+    message(STATUS "is found in the system, using the system version.")
+endif()
 
 ###===========================================SUBDIRECTORY==========================================
 
-add_subdirectory(lib/RLogSU)
 
 # add_subdirectory(tools/cmd_options)
 add_subdirectory(source/dumb_math)
