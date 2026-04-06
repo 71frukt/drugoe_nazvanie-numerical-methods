@@ -42,7 +42,8 @@ void PrintTable(const std::vector<TableItem>& table, const size_t table_size_exp
 
     for (const TableItem& item : table)
     {
-        ostream << "    {.one_div_x = " << item.one_div_x << ", \t"
+        ostream << "    {.x = "         << item.x         << ", "
+                        ".one_div_x = " << item.one_div_x << ", "
                         ".ln_x = "      << item.ln_x      << "},"               << std::endl;
     }
 

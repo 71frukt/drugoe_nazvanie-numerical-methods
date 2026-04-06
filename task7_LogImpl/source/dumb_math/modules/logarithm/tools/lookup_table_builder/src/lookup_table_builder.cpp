@@ -28,6 +28,7 @@ namespace detail::lookup_table {
 
     for (size_t i = 0; i < table_size; ++i, x_i += delta)
     {
+        table[i].x         = x_i;
         table[i].one_div_x = 1 / x_i;
         table[i].ln_x      = common::LnArtgTailorBestAcc_0to2(x_i);
     }

@@ -12,6 +12,7 @@ namespace detail::lookup_table {
 
 struct TableItem
 {
+    long double x;
     long double one_div_x;
     long double ln_x;    
 };
