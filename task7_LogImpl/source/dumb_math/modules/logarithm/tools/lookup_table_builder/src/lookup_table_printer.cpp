@@ -12,7 +12,7 @@ namespace detail::lookup_table {
 
 void PrintTable(const std::vector<TableItem>& table, const size_t table_size_exp, std::ostream& ostream)
 {
-    RLSU_ASSERT(table.size() == (size_t(1) << table_size_exp), "invalid table size={} or table_size_exp={}", table.size(), table_size_exp);
+    RLSU_ASSERT(table.size() == (size_t(1) << table_size_exp) + 1, "invalid table size={} or table_size_exp={}", table.size(), table_size_exp);
 
     #define STR_HELPER_(x) #x
     #define STR_(x) STR_HELPER_(x)
@@ -38,13 +38,13 @@ void PrintTable(const std::vector<TableItem>& table, const size_t table_size_exp
     #undef STR_HELPER_
     #undef STR_
 
-    ostream << std::fixed << std::setprecision(std::numeric_limits<long double>::digits10);
+    ostream << std::fixed << std::setprecision(std::numeric_limits<long double>::max_digits10);
 
     for (const TableItem& item : table)
     {
-        ostream << "    {.x = "         << item.x         << ", "
-                        ".one_div_x = " << item.one_div_x << ", "
-                        ".ln_x = "      << item.ln_x      << "},"               << std::endl;
+        ostream << "    {.x = "         << item.x         << "L, "
+                        ".one_div_x = " << item.one_div_x << "L, "
+                        ".ln_x = "      << item.ln_x      << "L},"               << std::endl;
     }
 
     ostream << "}};"                                                            << std::endl

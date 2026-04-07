@@ -23,7 +23,7 @@ namespace common    {
 template <std::floating_point T>
 T LnArtgTailorBestAcc_0to2(T x)
 {
-    RLSU_ASSERT((x < 2) && (x > 0), "value (x = {}) outside the segment (0; 2)", x);
+    RLSU_ASSERT((x <= 2) && (x >= 0), "value (x = {}) outside the segment [0; 2]", x);
 
     T y0    = (x - 1) / (x + 1);
     T yi    = y0;

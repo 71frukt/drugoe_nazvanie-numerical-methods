@@ -7,6 +7,7 @@
 #include <cfenv>
 #include <cerrno>
 
+#include "RLogSU/logger.hpp"
 #include "lookup_table.hpp"
 #include "logarithm/tailor.hpp"
 #include "logarithm/common/approx.hpp"
@@ -43,10 +44,10 @@ T ln(T x)
         return x; // ln(+inf) = +inf. Флаги не выставляются.
     }
 
-    if (x >= T(0.85) && x <= T(1.15))
-    {
-        return common::LnArtgTailor_0to2<TailorDeg * 2>(x);
-    }
+    // if (x >= T(0.85) && x <= T(1.15))
+    // {
+    //     return common::LnArtgTailor_0to2<TailorDeg * 2>(x);
+    // }
 
     constexpr static long double ln2 = 0.693147180559945309417232121458176568L;
 
@@ -55,6 +56,8 @@ T ln(T x)
     const auto     mantissa    = common::GetNormalizedMantissa(x);
     const auto     exponenta   = common::GetExponent(x);
     const uint32_t table_index = GetTableIndex<TableSizeExp>(mantissa);
+
+    RLSU_ASSERT(table_index < LookupTable.size(), "");
 
     T v = LookupTable[table_index].one_div_x * T(mantissa);
 
