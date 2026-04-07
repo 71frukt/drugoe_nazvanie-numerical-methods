@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/two_level_test/include -I/home/frukt71/boost_1_84_0 -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/uniformity_tests/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/chi_square/source/rnd_bit_generators/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/chi_square/source/rnd_normal_generator/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/chi_square/source/chi_sq_generator/include -g -std=c++20 -Wall -Wextra -Wpedantic -O2 -o CMakeFiles/rnd_generators_test.dir/source/main.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/main.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/main.cpp",
+  "output": "CMakeFiles/rnd_generators_test.dir/source/main.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build",
+  "command": "/usr/bin/c++  -I/home/frukt71/boost_1_84_0 -g -std=c++20 -Wall -Wextra -Wpedantic -O2 -o CMakeFiles/ks_crack.dir/source/ks_crack.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/ks_crack.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/ks_crack.cpp",
+  "output": "CMakeFiles/ks_crack.dir/source/ks_crack.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/first_level_tests",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -g -std=c++20 -o CMakeFiles/first_level_tests.dir/src/disjoint_vectors.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/src/disjoint_vectors.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/src/disjoint_vectors.cpp",
+  "output": "source/first_level_tests/CMakeFiles/first_level_tests.dir/src/disjoint_vectors.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/first_level_tests",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -g -std=c++20 -o CMakeFiles/first_level_tests.dir/src/fourier_tester.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/src/fourier_tester.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/src/fourier_tester.cpp",
+  "output": "source/first_level_tests/CMakeFiles/first_level_tests.dir/src/fourier_tester.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/two_level_test",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/two_level_test/include -I/home/frukt71/boost_1_84_0 -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/first_level_tests/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/uniformity_tests/include -g -std=c++20 -o CMakeFiles/two_level_test.dir/src/two_level_tester.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/two_level_test/src/two_level_tester.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/two_level_test/src/two_level_tester.cpp",
+  "output": "source/two_level_test/CMakeFiles/two_level_test.dir/src/two_level_tester.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/utils/tests",
+  "command": "/usr/bin/c++  -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/tests/../include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/include -g -std=c++20 -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/utils_unittests.dir/src/test_fft.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/tests/src/test_fft.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/source/utils/tests/src/test_fft.cpp",
+  "output": "source/utils/tests/CMakeFiles/utils_unittests.dir/src/test_fft.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/lib/RLogSU",
+  "command": "/usr/bin/c++ -DFMT_LOCALE -DFMT_SHARED -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -g -std=c++20 -o CMakeFiles/RLogSU.dir/src/graph.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/src/graph.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/src/graph.cpp",
+  "output": "lib/RLogSU/CMakeFiles/RLogSU.dir/src/graph.cpp.o"
+},
+{
+  "directory": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/lib/RLogSU",
+  "command": "/usr/bin/c++ -DFMT_LOCALE -DFMT_SHARED -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/include -I/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/lib -g -std=c++20 -o CMakeFiles/RLogSU.dir/src/logger_impl.cpp.o -c /home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/src/logger_impl.cpp",
+  "file": "/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/lib/RLogSU/src/logger_impl.cpp",
+  "output": "lib/RLogSU/CMakeFiles/RLogSU.dir/src/logger_impl.cpp.o"
+}
+]

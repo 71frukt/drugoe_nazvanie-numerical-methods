@@ -1,0 +1,4 @@
+FFTTest.ImpulseResponse 1 0.00514342
+FFTTest.DCComponent 1 0.0049391
+FFTTest.SingleHarmonic 1 0.00284758
+---
