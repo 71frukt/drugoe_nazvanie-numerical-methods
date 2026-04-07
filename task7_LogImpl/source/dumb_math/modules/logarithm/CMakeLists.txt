@@ -8,7 +8,7 @@ set(GENERATED_LUT "${CMAKE_CURRENT_SOURCE_DIR}/generated/lookup_table.hpp")
 
 add_custom_command(
     OUTPUT "${GENERATED_LUT}"
-    COMMAND $<TARGET_FILE:lookup_table_builder> --output "${GENERATED_LUT}" --table_size_exp 8
+    COMMAND $<TARGET_FILE:lookup_table_builder> --output "${GENERATED_LUT}" --table_size_exp 7
     
     DEPENDS $<TARGET_FILE:lookup_table_builder>
     COMMENT "Generating lookup table for logarithm..."

@@ -37,9 +37,17 @@ namespace {
 
 int main(const int argc, const char* argv[]) try
 {
-    ::MakeStat<float>       (config::FILE_1TOINF_FLOAT,   config::FILE_NEAR1_FLOAT );
-    ::MakeStat<double>      (config::FILE_1TOINF_DOUBLE,  config::FILE_NEAR1_DOUBLE);
-    ::MakeStat<long double> (config::FILE_1TOINF_LDOUBLE, config::FILE_NEAR1_LDOUBLE);
+    #ifdef DUMBTEST_LOG_FLOAT
+        ::MakeStat<float>       (config::FILE_1TOINF_FLOAT,   config::FILE_NEAR1_FLOAT );
+    #endif
+
+    #ifdef DUMBTEST_LOG_DOUBLE
+        ::MakeStat<double>      (config::FILE_1TOINF_DOUBLE,  config::FILE_NEAR1_DOUBLE);
+    #endif
+    
+    #ifdef DUMBTEST_LOG_LDOUBLE
+        ::MakeStat<long double> (config::FILE_1TOINF_LDOUBLE, config::FILE_NEAR1_LDOUBLE);
+    #endif
 }
 
 catch (std::runtime_error e)

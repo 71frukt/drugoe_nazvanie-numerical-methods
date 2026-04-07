@@ -2,6 +2,8 @@
 #pragma once
 #include <string_view>
 
+@CONFIG_DEFINES@
+
 namespace dumb_math          {
 namespace logarithm::tests   {
 namespace statistics::config {

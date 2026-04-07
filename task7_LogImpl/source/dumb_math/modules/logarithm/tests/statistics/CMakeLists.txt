@@ -21,12 +21,26 @@ set(PLOTS_DIR "${CMAKE_CURRENT_BINARY_DIR}/plots")
 file(MAKE_DIRECTORY "${DATA_DIR}")
 file(MAKE_DIRECTORY "${PLOTS_DIR}")
 
-set(FILE_1TOINF_DOUBLE  "stat_1toInf_double" )
-set(FILE_NEAR1_DOUBLE   "stat_near1_double"  )
-set(FILE_1TOINF_FLOAT   "stat_1toInf_float"  )
-set(FILE_NEAR1_FLOAT    "stat_near1_float"   )
-set(FILE_1TOINF_LDOUBLE "stat_1toInf_ldouble")
-set(FILE_NEAR1_LDOUBLE  "stat_near1_ldouble" )
+set(TEST_TYPES 
+    float 
+    double 
+    # ldouble
+)
+
+set(DATASETS "")
+set(CONFIG_DEFINES "")
+
+foreach(type IN LISTS TEST_TYPES)
+    string(TOUPPER "${type}" TYPE_UPPER)
+    
+    string(APPEND CONFIG_DEFINES "#define DUMBTEST_LOG_${TYPE_UPPER}\n")
+    
+    set(FILE_1TOINF_${TYPE_UPPER} "stat_1toInf_${type}")
+    set(FILE_NEAR1_${TYPE_UPPER}  "stat_near1_${type}")
+
+    list(APPEND DATASETS "stat_1toInf_${type}")
+    list(APPEND DATASETS "stat_near1_${type}")
+endforeach()
 
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/config.hpp.in"
@@ -34,14 +48,6 @@ configure_file(
 )
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/include")
 
-set(DATASETS 
-    ${FILE_1TOINF_FLOAT} 
-    ${FILE_NEAR1_FLOAT}
-    ${FILE_1TOINF_DOUBLE} 
-    ${FILE_NEAR1_DOUBLE}
-    ${FILE_1TOINF_LDOUBLE} 
-    ${FILE_NEAR1_LDOUBLE} 
-)
 
 set(EXPECTED_TXT_FILES "")
 foreach(dataset IN LISTS DATASETS)

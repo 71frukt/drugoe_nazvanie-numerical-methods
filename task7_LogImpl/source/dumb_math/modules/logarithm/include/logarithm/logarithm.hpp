@@ -15,7 +15,7 @@
 
 namespace dumb_math::logarithm {
 
-template <std::floating_point T, size_t TailorDeg = sizeof(T)>
+template <std::floating_point T, size_t TailorDeg = (sizeof(T) / 2)>
 T ln(T x)
 {
     if (x != x) // is nan
