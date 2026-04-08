@@ -1,7 +1,8 @@
-[submodule "task5_chi_square/lib/RLogSU"]
-	path = task5_chi_square/lib/RLogSU
+[submodule "chi_square_rlog"]
+	path = chi_square/lib/RLogSU
 	url = https://github.com/71frukt/RLogSU.git
 
-[submodule "rnd_generators_test/lib/RLogSU"]
+[submodule "rnd_test_rlog"]
 	path = rnd_generators_test/lib/RLogSU
 	url = https://github.com/71frukt/RLogSU.git
+

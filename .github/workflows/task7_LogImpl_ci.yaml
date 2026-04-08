@@ -1,0 +1,48 @@
+name: CI task7_LogImpl
+
+on:
+  push:
+    paths:
+      - 'task7_LogImpl/**'
+      - '.github/workflows/task7_LogImpl_ci.yml'
+  pull_request:
+    paths:
+      - 'task7_LogImpl/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release, Debug]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libfmt-dev libmpfr-dev libgmp-dev graphviz gnuplot
+
+    - name: Configure CMake
+      run: |
+        cmake -S task7_LogImpl -B task7_LogImpl/build \
+              -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+              -DCMAKE_SYSTEM_PREFIX_PATH="/usr;/usr/local"
+
+    - name: Build project and Generate test data
+      run: |
+        cmake --build task7_LogImpl/build --target logarithm_unittests -j $(nproc)
+        cmake --build task7_LogImpl/build --target generate_plots -j $(nproc)
+
+    - name: Run CTest
+      run: |
+        ctest --test-dir task7_LogImpl/build/source/dumb_math/modules/logarithm/tests \
+              --build-config ${{ matrix.build_type }} \
+              --output-on-failure
