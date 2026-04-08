@@ -1,0 +1,16 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/first_level_tests/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/two_level_test/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/uniformity_tests/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/utils/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/source/utils/tests/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/lib/RLogSU/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/chi_square_build0/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/chi_square_build1/cmake_install.cmake",
+		"/home/frukt71/Github/drugoe_nazvanie-numerical-methods/rnd_generators_test/build/chi_square_build3/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/ks_crack.dir/source/ks_crack.cpp.o -o ks_crack
